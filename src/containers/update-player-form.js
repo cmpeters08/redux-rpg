@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updatePlayer } from '../actions/update-player.js';
+import { updatePlayer } from '../actions/update-player-action.js';
 
 class UpdatePlayer extends Component{
 constructor(props){
@@ -13,9 +13,9 @@ constructor(props){
 	}
 }
 
-handleUpdatePlayer = input => event => {
+handleUpdatePlayer = userInput => event => {
 	this.setState({
-		[input]: event.target.value,
+		[userInput]: event.target.value,
 	});
 }
 	

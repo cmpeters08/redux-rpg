@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {updatePlayer} from '../actions/update-player.js';
+import {updatePlayer} from '../actions/update-player-action.js';
 
 class Player extends Component{
 
@@ -9,7 +9,6 @@ class Player extends Component{
 	return this.props.player.map((player) =>{
 		return(
 			<div key={player.id}>
-			
 			<div>{player.name}</div>
 			<div>Attack: {player.attack}</div>
 			<div>Defense: {player.defense}</div>
@@ -19,8 +18,6 @@ class Player extends Component{
 		)
 	})
 	}
-
-
 	render(){
 		return(
 			<div>{this.playerStats()}</div>

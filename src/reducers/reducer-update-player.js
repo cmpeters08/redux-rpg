@@ -1,4 +1,4 @@
-import { updatePlayer } from "../actions/update-player";
+import { updatePlayer } from "../actions/update-player-action";
 
 const player = (state = [], action) => {
 
@@ -20,10 +20,10 @@ const player = (state = [], action) => {
 		return[
 			{
 				id: 1,
-				name: "Kayla",
-				attack: 30,
-				defence: 30,
-				health: 40,
+				name: "Player 1",
+				attack: 0,
+				defence:0,
+				health: 0,
 				xPoints: 0,
 				level: 1,
 			}
