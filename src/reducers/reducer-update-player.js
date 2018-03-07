@@ -7,9 +7,9 @@ const player = (state = [], action) => {
 			{
 				id: 1,
 				name: action.name,
-				attack: action.attack,
-				defense: action.defense,
-				health: action.health,
+				attack: Number(action.attack),
+				defense: Number(action.defense),
+				health: Number(action.health),
 				xPoints: 0,
 				level: 1
 
@@ -17,8 +17,7 @@ const player = (state = [], action) => {
 		}
 
 	else{
-		return[
-			{
+		return[ {
 				id: 1,
 				name: "Player 1",
 				attack: 0,

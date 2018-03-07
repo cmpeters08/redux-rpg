@@ -1,5 +1,5 @@
 export default function() {
-	return[
+	return
 		{
 			id: 1,
 			name: "Emma",
@@ -11,5 +11,5 @@ export default function() {
 			defeated: false,
 
 		}
-	]
+	
 }
