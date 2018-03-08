@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { CreatureReducer } from '../reducers/reducer-creatures';
 import { getRandomCreature } from '../components/helper-functions';
 import { handleBattles } from '../components/helper-functions';
+import { updatePlayerStatsDuringBattle } from '../actions/update-player-action';
 
 
 class BattleField extends Component{
@@ -14,11 +15,18 @@ constructor(){
 	}
 }
 
-	fightClubTime = () =>{
-		let tyler = handleBattles(this.state.oppenent, this.props.player);
+	fightTime = () =>{
+		let aBattle = handleBattles(this.state.oppenent, this.props.player);
 		this.setState({
-			player: tyler,
+			player: aBattle,
 		})
+		this.props.dispatch(updatePlayerStatsDuringBattle(
+			this.props.player.name,
+			this.props.player.attack,
+			this.props.player.defense,
+			this.props.player.health,
+			this.props.player.xPoints,
+		));
 	}
 
 	displayRandomCreature = () => {
@@ -39,7 +47,7 @@ constructor(){
 				<div>Defense: {this.state.oppenent.defense}</div>
 				<div>Health: {this.state.oppenent.health}</div>
 				<button onClick={() => this.displayRandomCreature()}>Get Random Opponent</button>
-				<button onClick={() => this.fightClubTime()}>Fight This Oppenet</button>
+				<button onClick={() => this.fightTime()}>Fight This Oppenet</button>
 			</div>
 		)
 	}

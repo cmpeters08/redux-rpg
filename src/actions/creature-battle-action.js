@@ -7,7 +7,7 @@ export const creatureHealth = (creature, health) =>{
 	}
 }
 
-export const playerCreaatureBattle = (player, creature) =>{
+export const playerCreatureBattle = (player, creature) =>{
 	return{
 		type: "PLAYER_CREATURE_BATTLE",
 		payload: {
@@ -26,15 +26,7 @@ export const playerCreaatureBattle = (player, creature) =>{
 
 }
 
-export const getRandomCreature = (allCreatures) =>{
-		return{	
-		type:'GET_RANDOM_CREATURE',
-		creature: randomGen()
-		}
-	function randomGen(allCreatures){
-		return Math.floor(Math.random() * allCreatures.length) + 1;
-	}
-}
+
 
 
 

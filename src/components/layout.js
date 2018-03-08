@@ -13,7 +13,7 @@ const Layout = () =>(
 		<h2>Player Stats</h2>
 		<Player />
 		<br />
-		<BattleField />
+		<BattleField/>
 	</div>
 );
 
